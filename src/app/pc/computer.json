@@ -1,0 +1,28 @@
+{
+	"computer":[{
+	"id": 1,
+	"brand": "Asus",
+	"category": "pc-portable",
+	"label": "Taille de l'écran 15.6, Processeur Intel Core i7, RAM installée 8 Go, Capacité de stockage 512 Go",
+	"price": 899.99,
+	"name": "Pc portable Asus",
+	"photo": "/src/assets/img/photo.png"
+},
+{
+	"id": 2,
+	"brand": "LDLC",
+	"category": "pc-fixe",
+	"label": "Découvrez le PC LDLC Zi-artist équipé d'un processeur Intel Core i7 de 10ème génération pour une puissance multitâche sans équivalent et des performances graphiques sans précédent.",
+	"price": 939.95,
+	"name": "Pc portable Asus",
+	"photo": "/src/assets/img/photo2.png"
+},
+{
+	"id": 3,
+	"brand": "Razer",
+	"category": "pc-accessoire",
+	"label": "Le clavier est fabriqué en aluminium et est disponible en vert razer et en jaune razer. Claviers mécanique de qualité",
+	"price": 149.99,
+	"name": "Clavier multicolore razer",
+	"photo": "/src/assets/img/photo3.png"
+}]}
