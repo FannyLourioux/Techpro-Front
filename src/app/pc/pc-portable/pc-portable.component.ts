@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Pc } from '../Pc';
+import { Article } from '../../element';
 import { PcService } from '../pc.service';
 
 @Component({
   selector: 'app-pc-portable',
   templateUrl: '../../element-layout.html',
-  styleUrls: ['./pc-portable.component.css'],
+  styleUrls: ['../../element-layout.css'],
   providers: [PcService]
 })
 export class PcPortableComponent implements OnInit {
-  computers: Array<Pc> = [];
+  articles: Array<Article> = [];
   constructor(private service: PcService) { }
 
   ngOnInit(): void {
-    this.service.getLaptops().subscribe(computers => this.computers = computers);
+    this.service.getLaptops().subscribe(computers => this.articles = computers);
   }
 
 }

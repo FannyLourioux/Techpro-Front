@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Pc } from './Pc';
+import { Article } from '../element';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PcService {
-  private computers: Array<Pc> = [{
+  private computers: Array<Article> = [{
     id: 1344,
     name: 'Macbook Pro',
     brand: 'Apple',
@@ -45,7 +45,7 @@ export class PcService {
   }]
   constructor() { }
 
-  getComputers() : Observable<Array<Pc>> { return of(this.computers); }
-  getLaptops() : Observable<Array<Pc>> { return of(this.computers.filter(computer => computer.category === 'portable')); }
-  getDesktops() : Observable<Array<Pc>> { return of(this.computers.filter(computer => computer.category === 'fixe')); }
+  getComputers() : Observable<Array<Article>> { return of(this.computers); }
+  getLaptops() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'portable')); }
+  getDesktops() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'fixe')); }
 }
