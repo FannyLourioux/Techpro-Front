@@ -3,17 +3,17 @@ import { Pc } from '../Pc';
 import { PcService } from '../pc.service';
 
 @Component({
-  selector: 'app-pc-portable',
+  selector: 'app-pc-list',
   templateUrl: '../../element-layout.html',
-  styleUrls: ['./pc-portable.component.css'],
+  styleUrls: ['./pc-list.component.css'],
   providers: [PcService]
 })
-export class PcPortableComponent implements OnInit {
+export class PcListComponent implements OnInit {
   computers: Array<Pc> = [];
   constructor(private service: PcService) { }
 
   ngOnInit(): void {
-    this.service.getLaptops().subscribe(computers => this.computers = computers);
+    this.service.getComputers().subscribe(computers => this.computers = computers);
   }
 
 }
