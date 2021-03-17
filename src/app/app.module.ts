@@ -10,13 +10,15 @@ import { StockageModule } from './stockage/stockage.module';
 import { TelephoneModule } from './telephone/telephone.module';
 import { CreationComponent } from './creation/creation.component';
 import { FormsModule } from '@angular/forms';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    CreationComponent
+    CreationComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,

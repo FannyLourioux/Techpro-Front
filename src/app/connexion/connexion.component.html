@@ -1,0 +1,24 @@
+<div class="center"><h3>connexion</h3><br/></div>
+<div class="center">
+<form #connexionForm="ngForm" (ngSubmit)="connexion(connexionForm)">
+    <div class="row mb-3" style="width: 500px;">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" name="email" #email="ngModel" ngModel email required>
+            <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched" role="alert">
+                Email requis
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3" style="width: 500px;">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" name="psw" #psw="ngModel" ngModel required minlength="8">
+            <div class="alert alert-danger" *ngIf="psw.errors?.minlength && psw.touched" role="alert">
+                8 caractères minimum
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="connexionForm.invalid">Se connecter</button>
+</form>
+</div>
