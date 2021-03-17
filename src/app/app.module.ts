@@ -8,19 +8,23 @@ import { HomeComponent } from './home/home.component';
 import { PcModule } from './pc/pc.module';
 import { StockageModule } from './stockage/stockage.module';
 import { TelephoneModule } from './telephone/telephone.module';
+import { CreationComponent } from './creation/creation.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    CreationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PcModule,
     TelephoneModule,
-    StockageModule
+    StockageModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
