@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
+import { Router } from  '@angular/router';
+import { AuthService } from  '../auth.service';
 
 @Component({
   selector: 'app-connexion',
@@ -6,17 +9,48 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  loginForm!: FormGroup;
+  isSubmitted  =  false;
+  constructor(private authService: AuthService,
+    private router: Router, private formBuilder: FormBuilder ) {  }
+    ngOnInit() {
+      this.loginForm  =  this.formBuilder.group({
+          email: ['', Validators.required],
+          password: ['', Validators.required]
+      });
   }
-
-  connexion(x:any){
-    let data = x.value;
-    console.log(data);
-
-    
+  get formControls() { return this.loginForm.controls; }
+  seConnecter(){
+    console.log(this.loginForm.value);
+    this.isSubmitted = true;
+    if(this.loginForm.invalid){
+      return;
+    }
+    this.authService.seConnecter(this.loginForm.value);
+    this.router.navigateByUrl('/admin');
   }
 
 }
+
+// import { Component, OnInit } from '@angular/core';
+
+// @Component({
+//   selector: 'app-connexion',
+//   templateUrl: './connexion.component.html',
+//   styleUrls: ['./connexion.component.css']
+// })
+// export class ConnexionComponent implements OnInit {
+
+//   constructor() { }
+
+//   ngOnInit(): void {
+//   }
+
+//   connexion(x:any){
+//     let data = x.value;
+//     console.log(data);
+
+    
+//   }
+
+// }

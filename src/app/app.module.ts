@@ -9,8 +9,9 @@ import { PcModule } from './pc/pc.module';
 import { StockageModule } from './stockage/stockage.module';
 import { TelephoneModule } from './telephone/telephone.module';
 import { CreationComponent } from './creation/creation.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ConnexionComponent } from './connexion/connexion.component';
     NavbarComponent,
     HomeComponent,
     CreationComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,9 @@ import { ConnexionComponent } from './connexion/connexion.component';
     PcModule,
     TelephoneModule,
     StockageModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
