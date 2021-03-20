@@ -43,11 +43,30 @@ export class StockageService {
     photo: '/assets/img/x',
     label: 'Pour un stockage complet',
     price: 257
+  },
+  {
+    id:11,
+    name: 'Cable de chargement',
+    brand: 'brandAccess',
+    category: 'accessoire',
+    photo: '/assets/img/x',
+    label: 'Pour un chargement optimal',
+    price: 12
+  },
+  {
+    id:12,
+    name: 'Adaptateur',
+    brand: 'LDLC',
+    category: 'accessoire',
+    photo: '/assets/img/x',
+    label: 'Adaptateur HDMI/VGA',
+    price: 20
   }]
   constructor() { }
 
   getStorage() : Observable<Array<Article>> { return of(this.items); }
   getUsb() : Observable<Array<Article>> { return of(this.items.filter(item => item.category === 'usb')); }
-  getDisks() : Observable<Array<Article>> { return of(this.items.filter(item => item.category === 'disque')); }
+  getDisks() : Observable<Array<Article>> { return of(this.items.filter(item => item.category === 'disque'));}
+  getAccessories() : Observable<Array<Article>> { return of(this.items.filter(item => item.category === 'accessoire')); }
 
 }

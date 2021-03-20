@@ -42,10 +42,31 @@ export class PcService {
     photo: '/assets/img/x',
     label: 'The computer at the top of the market',
     price: 2579
-  }]
+  },
+
+  {
+    id: 155,
+    name: 'Clavier color',
+    brand: 'Razer',
+    category: 'accessoire',
+    photo: '/assets/img/x',
+    label: 'Le clavier multicolore le plus beau pour vos setup gaming',
+    price: 60
+  },
+  {
+    id: 156,
+    name: 'Souris gaming',
+    brand: 'Razer',
+    category: 'accessoire',
+    photo: '/assets/img/x',
+    label: 'La souris gaming qui vous fait cliquer rapidement',
+    price: 40
+  }
+  ]
   constructor() { }
 
   getComputers() : Observable<Array<Article>> { return of(this.computers); }
   getLaptops() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'portable')); }
   getDesktops() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'fixe')); }
+  getAccessoire() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'accessoire')); }
 }
