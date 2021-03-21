@@ -1,4 +1,10 @@
+.center {
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
 
+/* 
 .login {
   width: 400px;
   margin: 16px auto;
@@ -77,8 +83,4 @@
   border-color: #05a;
 }
 
-.center {
-    display: flex;
-    justify-content: center;
-    margin: 2%;
-}
+ */

@@ -7,14 +7,14 @@ import { CreationComponent } from './creation/creation.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate:[AuthGuard] },
+  { path: 'home', component: HomeComponent},
   { path: 'creation', component: CreationComponent },
-  { path: '', component: ConnexionComponent },
-  { path: 'deco', component: AdminComponent },
+  { path: 'admin', component: ConnexionComponent },
+  { path: 'deco', component: AdminComponent, canActivate:[AuthGuard] },
   { path: 'admin', component: AdminComponent },
-  { path: 'pc', loadChildren: () => import('./pc/pc.module').then(m => m.PcModule), canActivate:[AuthGuard] },
-  { path: 'telephone', loadChildren: () => import('./telephone/telephone.module').then(m => m.TelephoneModule), canActivate:[AuthGuard] },
-  { path: 'stockage', loadChildren: () => import('./stockage/stockage.module').then(m => m.StockageModule), canActivate:[AuthGuard] }
+  { path: 'pc', loadChildren: () => import('./pc/pc.module').then(m => m.PcModule) },
+  { path: 'telephone', loadChildren: () => import('./telephone/telephone.module').then(m => m.TelephoneModule) },
+  { path: 'stockage', loadChildren: () => import('./stockage/stockage.module').then(m => m.StockageModule) }
 ];
 
 @NgModule({
