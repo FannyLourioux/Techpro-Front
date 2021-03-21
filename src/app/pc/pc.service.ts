@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Article } from '../element';
@@ -43,9 +44,14 @@ export class PcService {
     label: 'The computer at the top of the market',
     price: 2579
   }]
-  constructor() { }
+
+  private url: string = 'http://localhost:8080/tech/items/telephone'
+  
+  constructor(private client: HttpClient) {
+    this.client = client
+  }
 
   getComputers() : Observable<Array<Article>> { return of(this.computers); }
-  getLaptops() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'portable')); }
-  getDesktops() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'fixe')); }
+  getLaptops() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/portables`); }
+  getDesktops() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/fixes`); }
 }
