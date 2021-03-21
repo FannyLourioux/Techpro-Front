@@ -45,7 +45,7 @@ export class PcService {
     price: 2579
   }]
 
-  private url: string = 'http://localhost:8080/tech/items/telephone'
+  private url: string = 'http://localhost:8080/tech/items/pc'
   
   constructor(private client: HttpClient) {
     this.client = client
