@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Article } from '../element';
@@ -44,10 +45,14 @@ export class StockageService {
     label: 'Pour un stockage complet',
     price: 257
   }]
-  constructor() { }
+
+  private url: string = 'http://localhost:8080/tech/items/stockage'
+
+  constructor(private client: HttpClient) {}
 
   getStorage() : Observable<Array<Article>> { return of(this.items); }
-  getUsb() : Observable<Array<Article>> { return of(this.items.filter(item => item.category === 'usb')); }
-  getDisks() : Observable<Array<Article>> { return of(this.items.filter(item => item.category === 'disque')); }
+  getUsb() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/cles`) }
+  getDisks() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/disques`); }
+  getAccessories() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/accessoires`); }
 
 }
