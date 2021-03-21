@@ -53,5 +53,6 @@ export class StockageService {
   getStorage() : Observable<Array<Article>> { return of(this.items); }
   getUsb() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/cles`) }
   getDisks() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/disques`); }
+  getAccessories() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/accessoires`); }
 
 }

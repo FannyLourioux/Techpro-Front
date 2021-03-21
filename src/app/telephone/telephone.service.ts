@@ -51,4 +51,5 @@ private phones: Array<Article> = [{
   getPhones() : Observable<Array<Article>> { return of(this.phones); }
   getMobiles() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/portables`); }
   getFixedLines() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/fixes`); }
+  getAccessories() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/accessoires`); }
 }
