@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Article } from '../element';
@@ -42,31 +43,16 @@ export class PcService {
     photo: '/assets/img/x',
     label: 'The computer at the top of the market',
     price: 2579
-  },
+  }]
 
-  {
-    id: 155,
-    name: 'Clavier color',
-    brand: 'Razer',
-    category: 'accessoire',
-    photo: '/assets/img/x',
-    label: 'Le clavier multicolore le plus beau pour vos setup gaming',
-    price: 60
-  },
-  {
-    id: 156,
-    name: 'Souris gaming',
-    brand: 'Razer',
-    category: 'accessoire',
-    photo: '/assets/img/x',
-    label: 'La souris gaming qui vous fait cliquer rapidement',
-    price: 40
+  private url: string = 'http://localhost:8080/tech/items/pc'
+  
+  constructor(private client: HttpClient) {
+    this.client = client
   }
-  ]
-  constructor() { }
 
   getComputers() : Observable<Array<Article>> { return of(this.computers); }
-  getLaptops() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'portable')); }
-  getDesktops() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'fixe')); }
-  getAccessoire() : Observable<Array<Article>> { return of(this.computers.filter(computer => computer.category === 'accessoire')); }
+  getLaptops() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/portables`); }
+  getDesktops() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/fixes`); }
+  getAccessories() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/accessoires`); }
 }

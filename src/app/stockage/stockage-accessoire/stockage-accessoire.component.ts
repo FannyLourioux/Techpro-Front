@@ -5,15 +5,14 @@ import { StockageService } from '../stockage.service';
 @Component({
   selector: 'app-stockage-accessoire',
   templateUrl: '../../element-layout.html',
-  styleUrls: ['../../element-layout.css'],
-  providers: [StockageService]
+  styleUrls: ['../../element-layout.css']
 })
 export class StockageAccessoireComponent implements OnInit {
+  articles: Array<Article> = [];
 
-  articles: Article[] = [];
   constructor(private service: StockageService) { }
 
   ngOnInit(): void {
-    this.service.getAccessories().subscribe(disks => this.articles = disks);
+    this.service.getAccessories().subscribe(items => this.articles = items);
   }
 }
