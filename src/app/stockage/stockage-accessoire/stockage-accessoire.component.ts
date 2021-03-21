@@ -21,5 +21,4 @@ export class StockageAccessoireComponent implements OnInit {
     this.service.delete(id);
     location.reload();
   }
-
 }
