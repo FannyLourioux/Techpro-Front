@@ -17,4 +17,9 @@ export class TelephoneFixeComponent implements OnInit {
     this.service.getFixedLines().subscribe(phones => this.articles = phones);
   }
 
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
+  }
+
 }

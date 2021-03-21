@@ -5,7 +5,8 @@ import { PcService } from '../pc.service';
 @Component({
   selector: 'app-pc-accessoire',
   templateUrl: '../../element-layout.html',
-  styleUrls: ['../../element-layout.css']
+  styleUrls: ['../../element-layout.css'],
+  providers: [PcService]
 })
 export class PcAccessoireComponent implements OnInit {
   articles: Array<Article> = []
@@ -14,6 +15,11 @@ export class PcAccessoireComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getAccessories().subscribe(items => this.articles = items);
+  }
+
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
   }
 
 }

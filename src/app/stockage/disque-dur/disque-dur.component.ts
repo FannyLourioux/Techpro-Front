@@ -17,4 +17,9 @@ export class DisqueDurComponent implements OnInit {
     this.service.getDisks().subscribe(disks => this.articles = disks);
   }
 
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
+  }
+
 }

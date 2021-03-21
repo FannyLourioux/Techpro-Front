@@ -16,4 +16,9 @@ export class PcListComponent implements OnInit {
     this.service.getComputers().subscribe(computers => this.articles = computers);
   }
 
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
+  }
+
 }

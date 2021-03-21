@@ -2,10 +2,16 @@
     <li *ngFor="let article of articles"> 
         <img alt src={{article.photo}}/> <!--Ne pas ajouter d'espace sinon ça casse les images-->
         <ul>
+            <li>
+                <img src="{{article.photo}}" alt=""/>
+            </li>
             <li>{{ article.name }}</li>
             <li>{{ article.brand }}</li>
             <li>{{ article.price }}</li>
             <li>{{ article.label }}</li>
+            <li>
+                <button type="button" (click)="delete(article.id)">Supprimer</button>
+            </li>
         </ul>
     </li>
 </ul>
