@@ -16,4 +16,9 @@ export class PcFixeComponent implements OnInit {
     this.service.getDesktops().subscribe(computers => this.articles = computers);
   }
 
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
+  }
+
 }

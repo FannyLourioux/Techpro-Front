@@ -16,4 +16,9 @@ export class CleUsbComponent implements OnInit {
     this.service.getUsb().subscribe(usbs => this.articles = usbs);
   }
 
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
+  }
+
 }

@@ -17,4 +17,9 @@ export class TelephonePortableComponent implements OnInit {
     this.service.getMobiles().subscribe(phones => this.articles = phones);
   }
 
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
+  }
+
 }

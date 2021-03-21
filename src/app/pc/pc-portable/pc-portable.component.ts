@@ -16,4 +16,9 @@ export class PcPortableComponent implements OnInit {
     this.service.getLaptops().subscribe(computers => this.articles = computers);
   }
 
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
+  }
+
 }
