@@ -23,9 +23,8 @@ footer {
     grid-row-end: 3;
     display: flex;
     justify-content: center;
-    background-color: #4b9ff3;
+    background-color: #03aeee;
     color: #fff;
-    position:absolute;
     bottom:0;
     width:100%;
     padding-top:50px;
@@ -41,4 +40,8 @@ footer {
 
 .footer-ul{
     padding-right: 3%;
-    }
+}
+
+a {
+    color: #0b5881;
+}
