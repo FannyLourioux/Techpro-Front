@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 import { Article } from 'src/app/element';
 import { StockageService } from '../stockage.service';
 
@@ -11,15 +12,18 @@ import { StockageService } from '../stockage.service';
 export class DisqueDurComponent implements OnInit {
 
   articles: Article[] = [];
-  constructor(private service: StockageService) { }
+  constructor(private service: StockageService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.service.getDisks().subscribe(disks => this.articles = disks);
   }
 
   delete(id: string): void {
-    this.service.delete(id);
-    location.reload();
+    const x = this.authService.estConnecte;
+    if (x()) {
+      this.service.delete(id);
+      location.reload();
+    }
   }
   ajoutPanier(id: string){
     const panier = localStorage.getItem('panier');

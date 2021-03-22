@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 import { Article } from 'src/app/element';
 import { TelephoneService } from '../telephone.service';
 
@@ -11,15 +12,18 @@ import { TelephoneService } from '../telephone.service';
 export class TelephonePortableComponent implements OnInit {
   articles: Article[] = [];
   
-  constructor(private service: TelephoneService) { }
+  constructor(private service: TelephoneService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.service.getMobiles().subscribe(phones => this.articles = phones);
   }
 
   delete(id: string): void {
-    this.service.delete(id);
-    location.reload();
+    const x = this.authService.estConnecte;
+    if (x()) {
+      this.service.delete(id);
+      location.reload();
+    }
   }
 
   ajoutPanier(id: string){
