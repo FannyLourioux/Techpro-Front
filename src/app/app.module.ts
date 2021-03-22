@@ -13,6 +13,7 @@ import { CreationComponent } from './creation/creation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { AdminComponent } from './admin/admin.component';
+import { PanierComponent } from './panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AdminComponent } from './admin/admin.component';
     HomeComponent,
     CreationComponent,
     ConnexionComponent,
-    AdminComponent
+    AdminComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

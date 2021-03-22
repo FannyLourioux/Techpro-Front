@@ -6,4 +6,5 @@ export interface Article {
     photo: string,
     label: string,
     price: number
+    
 }

@@ -25,4 +25,13 @@ export class CleUsbComponent implements OnInit {
     }
   }
 
+  ajoutPanier(id: string){
+    const panier = localStorage.getItem('panier');
+    const str = JSON.parse(panier || '[]');
+    const pa = str.push({id: `${id}`});
+    localStorage.setItem('panier',JSON.stringify(str));
+    //localStorage.setItem('panier',`[{"id": "${id}"}]`);
+    console.log(str);
+    //localStorage.setItem('panier',`${JSON.stringify([...JSON.parse(localStorage.getItem("panier")|| '[]'),id])}`);
+  }
 }

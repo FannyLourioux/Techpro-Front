@@ -19,7 +19,7 @@ export class StockageService {
   delete(id: string): void { 
     
     const x = this.authService.estConnecte;
-    if (x()) {
+    if (x() && confirm("Supprimer l'article ?")) {
       this.client.delete(`http://localhost:8080/tech/item/${id}`).subscribe(() => console.log('working')); 
     }
   }
