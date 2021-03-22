@@ -9,11 +9,14 @@ button {
     margin-right: 1%;
 }
 
+button:hover {
+    background-color: #03aeee;
+}
 .addbtn {
  border: none;
  border-radius: 10px;
  color: aliceblue;
- background-color: rgb(27, 27, 155);
+ background-color: #0b5881;
 }
 
 .deletebtn {
