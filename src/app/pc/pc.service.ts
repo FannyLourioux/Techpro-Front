@@ -20,6 +20,6 @@ export class PcService {
   getAccessories() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/accessoires`); }
   delete(id: string): void { 
     const x = this.authService.estConnecte;
-    if (x()) this.client.delete(`http://localhost:8080/tech/item/${id}`).subscribe(() => console.log('working')); 
+    if (x() && confirm("Supprimer l'article ?")) this.client.delete(`http://localhost:8080/tech/item/${id}`).subscribe(() => console.log('working')); 
   }
 }

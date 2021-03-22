@@ -12,7 +12,7 @@ export class AjoutArticleService {
   RecupArticles() : Observable<Array<Article>> {
     let idAll : Array<string> = [];
     
-    idAll = JSON.parse(localStorage.getItem('panier')|| '[]').map((obj: any) => obj.id);
+    idAll = JSON.parse(localStorage.getItem('panier')|| '[]').map((obj: any) => {console.log(obj); return obj.id});
     return this.http.post<Array<Article>>("http://localhost:8080/tech/items/ids", idAll);
     
   }
