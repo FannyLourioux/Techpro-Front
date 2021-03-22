@@ -16,7 +16,7 @@ export class AdminComponent implements OnInit {
 
   seDeconnecter(){
     this.authService.seDeconnecter();
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/connexion');
   }
 
 }
