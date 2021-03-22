@@ -8,10 +8,9 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'creation', component: CreationComponent },
+  { path: 'creation', component: CreationComponent, canActivate:[AuthGuard]  },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'deco', component: AdminComponent, canActivate:[AuthGuard] },
-  { path: 'admin', component: AdminComponent },
   { path: 'pc', loadChildren: () => import('./pc/pc.module').then(m => m.PcModule) },
   { path: 'telephone', loadChildren: () => import('./telephone/telephone.module').then(m => m.TelephoneModule) },
   { path: 'stockage', loadChildren: () => import('./stockage/stockage.module').then(m => m.StockageModule) }
