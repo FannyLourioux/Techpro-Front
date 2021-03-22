@@ -3,7 +3,7 @@
   </h1>
 <div class="center">
     <form #creationForm="ngForm" (ngSubmit)="validate()">
-        <p>Marque : {{ brand }}
+        <p>Marque :
             <select (change)='changeBrand($event)' name="brands" id="brands">
                 <option value="">Sélectionner</option>
                 <option value="APPLE">Apple</option>
@@ -11,10 +11,18 @@
                 <option value="SAN_DISK">San Disk</option>
                 <option value="ARCANITE">Acarnite</option>
                 <option value="ENUODA">Enuoda</option>
+                <option value="DELL">Dell</option>
+                <option value="RHINOSHIELD">Rhinoshield</option>
+                <option value="PANASONIC">Panasonic</option>
+                <option value="LDLC">LDLC</option>
+                <option value="RAZER">Razer</option>
+                <option value="SAMSUNG">Samsung</option>
+                <option value="ALCATEL">Alcatel</option>
+                
             </select>
         </p>
         <hr class="divider">
-        <p>Prix : {{ price }}
+        <p>Prix : {{ price }} €
             <input
             type='number'
             class='form-control'
@@ -22,7 +30,7 @@
             />
         </p>
         <hr class="divider">
-        <p>Description : {{ label }}
+        <p>Description :
             <input
             type='text'
             class='form-control'
@@ -30,7 +38,7 @@
             />
         </p>
         <hr class="divider">
-        <p>Nom : {{ name }}
+        <p>Nom :
             <input
             type='text'
             class='form-control'
@@ -38,7 +46,7 @@
             />
         </p>
         <hr class="divider">
-        <p>Catégorie : {{ category }}
+        <p>Catégorie :
             <select (change)='changeCategory($event)' name="categories" id="categories">
                 <option value="">Sélectionner</option>
                 <option value="PC_FIXE">Pc fixe</option>
@@ -53,7 +61,7 @@
             </select>
         </p>
         <hr class="divider">
-        <p>Photo : {{ photo }}
+        <p>Photo :
             <input
             type='text'
             class='form-control'
