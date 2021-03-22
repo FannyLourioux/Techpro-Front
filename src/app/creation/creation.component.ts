@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -32,8 +33,10 @@ export class CreationComponent implements OnInit {
     };
 
     console.log(obj);
+    obj.brand !== '' && obj.category !== '' ? this.client.post('http://localhost:8080/tech/item/', obj)
+      .subscribe(value => console.log(value)) : alert('Les champs catégories et marque doivent être remplis');
   }
-  constructor() { }
+  constructor(private client: HttpClient) { }
 
   ngOnInit(): void {
   }

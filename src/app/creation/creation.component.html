@@ -3,6 +3,7 @@
 <p>Marque : {{ brand }}</p>
 <form #creationForm="ngForm" (ngSubmit)="validate()">
     <select (change)='changeBrand($event)' name="brands" id="brands">
+        <option value="">Sélectionner</option>
         <option value="APPLE">Apple</option>
         <option value="ASUS">Asus</option>
         <option value="SAN_DISK">San Disk</option>
@@ -33,15 +34,16 @@
     <hr>
     <p>Catégorie : {{ category }}</p>
     <select (change)='changeCategory($event)' name="categories" id="categories">
+        <option value="">Sélectionner</option>
         <option value="PC_FIXE">Pc fixe</option>
         <option value="PC_PORTABLE">Pc portable</option>
-        <option value="PC_ACCESSOIRE">Accessoire pc</option>
+        <option value="ACCESSOIRE_PC">Accessoire pc</option>
         <option value="TELEPHONE_FIXE">Téléphone fixe</option>
         <option value="TELEPHONE_PORTABLE">Téléphone portable</option>
-        <option value="TELEPHONE_ACCESSOIRE">Accessoires téléphone</option>
-        <option value="STOCKAGE_USB">Clé USB</option>
-        <option value="STOCKAGE_DISQUE">Disque dur</option>
-        <option value="STOCKAGE_ACCESSOIRE">Accessoires stockage</option>
+        <option value="ACCESSOIRE_TELEPHONE">Accessoires téléphone</option>
+        <option value="CLE_USB">Clé USB</option>
+        <option value="DISQUE_DUR">Disque dur</option>
+        <option value="ACCESSOIRE_STOCKAGE">Accessoires stockage</option>
     </select>
     <hr>
     <p>Photo : {{ photo }}</p>
