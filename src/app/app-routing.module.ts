@@ -5,6 +5,7 @@ import { AuthGuard } from './auth.guard';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { CreationComponent } from './creation/creation.component';
 import { HomeComponent } from './home/home.component';
+import { PanierComponent } from './panier/panier.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'deco', component: AdminComponent, canActivate:[AuthGuard] },
   { path: 'pc', loadChildren: () => import('./pc/pc.module').then(m => m.PcModule) },
   { path: 'telephone', loadChildren: () => import('./telephone/telephone.module').then(m => m.TelephoneModule) },
-  { path: 'stockage', loadChildren: () => import('./stockage/stockage.module').then(m => m.StockageModule) }
+  { path: 'stockage', loadChildren: () => import('./stockage/stockage.module').then(m => m.StockageModule) },
+  { path: 'panier', component: PanierComponent }
 ];
 
 @NgModule({
