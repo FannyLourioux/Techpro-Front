@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Article } from '../element';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class PcService {
     this.client = client
   }
 
-  getComputers() : Observable<Array<Article>> { return of([]); }
+  getComputers() : Observable<Array<Article>> { return this.client.get<Array<Article>>(this.url); }
   getLaptops() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/portables`); }
   getDesktops() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/fixes`); }
   getAccessories() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/accessoires`); }

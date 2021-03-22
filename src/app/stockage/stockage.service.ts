@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Article } from '../element';
 
 @Injectable({
@@ -11,8 +11,8 @@ export class StockageService {
 
   constructor(private client: HttpClient) {}
 
-  getStorage() : Observable<Array<Article>> { return of([]); }
-  getUsb() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/cles`) }
+  getStorage() : Observable<Array<Article>> { return this.client.get<Array<Article>>(this.url); }
+  getUsb() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/cles`); }
   getDisks() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/disques`); }
   getAccessories() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/accessoires`); }
   delete(id: string): void { 
