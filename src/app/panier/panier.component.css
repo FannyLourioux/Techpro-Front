@@ -1,0 +1,17 @@
+.center {
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+  }
+
+button {
+    margin-top: 2%;
+    margin-right: 1%;
+}
+
+.panierbtn {
+ border: none;
+ border-radius: 10px;
+ color: beige;
+ background-color: rgb(221, 42, 42);
+}

@@ -8,10 +8,8 @@
             <li>{{ article.price }} €</li>
             <li>{{ article.label }}</li>
             <li>
-                <button type="button" (click)="delete(article.id)">Supprimer</button>
-            </li>
-            <li>
-                <button type="button" (click)="ajoutPanier(article.id)">Ajouter au Panier</button>
+                <button class="deletebtn" type="button" (click)="delete(article.id)">Supprimer</button>
+                <button class="addbtn" type="button" (click)="ajoutPanier(article.id)">Ajouter au Panier</button>
             </li>
         </ul>
     </li>

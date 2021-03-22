@@ -3,3 +3,22 @@ img {
     width: auto;
     margin-top: 2%;
 }
+
+button {
+    margin-top: 2%;
+    margin-right: 1%;
+}
+
+.addbtn {
+ border: none;
+ border-radius: 10px;
+ color: aliceblue;
+ background-color: rgb(27, 27, 155);
+}
+
+.deletebtn {
+    border: none;
+    border-radius: 10px;
+    color: beige;
+    background-color: rgb(212, 44, 44);
+}

@@ -1,38 +1,42 @@
-<h1>Mon panier</h1>
-<br>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>
-                Produit
-            </th>
-            <th>
-                Libelle
-            </th>
-            <th>
-                Marque
-            </th>
-            <th>
-                Prix
-            </th>
-            <th>
-                Categorie
-            </th>            
-        </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let articleaffich of articlepanier">
-                <td>{{ articleaffich.name }}</td>
-                <td>{{ articleaffich.label}}</td>
-                <td>{{ articleaffich.brand}}</td>
-                <td>{{ articleaffich.price}}€</td>
-                <td>{{ articleaffich.category}}</td>
-                <button type="button" (click)="delete(articleaffich.id)">Supprimer</button>
-            </tr>
+<div class="center">
+    <h1>Mon panier</h1>
+</div>
+<div class="center">
+    <br>
+    <table class="table table-bordered">
+        <thead>
             <tr>
-                <th>Prix Total</th>
-                <td>{{total}}€</td>
+                <th width="25%">
+                    Produit
+                </th>
+                <th width="40%">
+                    Libelle
+                </th>
+                <th width="10%">
+                    Marque
+                </th>
+                <th width="10%">
+                    Prix
+                </th>
+                <th width="15%">
+                    Categorie
+                </th>            
             </tr>
-        </tbody>
+            </thead>
+            <tbody>
+                <tr *ngFor="let articleaffich of articlepanier">
+                    <td>{{ articleaffich.name }}</td>
+                    <td>{{ articleaffich.label}}</td>
+                    <td>{{ articleaffich.brand}}</td>
+                    <td>{{ articleaffich.price}}€</td>
+                    <td>{{ articleaffich.category}}</td>
+                   <td> <button type="button" class="panierbtn" (click)="delete(articleaffich.id)">Supprimer</button></td>
+                </tr>
+                <tr>
+                    <th>Prix Total</th>
+                    <td>{{total}}€</td>
+                </tr>
+            </tbody>
 
-</table>
+    </table>
+</div>
