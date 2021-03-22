@@ -27,7 +27,7 @@ export class ConnexionComponent implements OnInit {
       return;
     }
     this.authService.seConnecter(this.loginForm.value);
-    this.router.navigateByUrl('/admin');
+    this.router.navigateByUrl('/deco');
   }
 
 }

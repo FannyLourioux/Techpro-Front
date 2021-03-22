@@ -1,9 +1,8 @@
 
-<h1 style="text-align:center">
-    Connexion TechPro
+<h1 class="center">
+    Connexion en tant qu'administrateur
   </h1>
-  <div class="login">
-    <h2 class="login-header">S'identifier</h2>
+  <div class="center">
     <form [formGroup]="loginForm" class="login-container" (ngSubmit)="seConnecter()">
       <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
         <input type="email" placeholder="Email" formControlName="email">

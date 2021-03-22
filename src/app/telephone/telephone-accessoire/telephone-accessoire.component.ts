@@ -5,7 +5,8 @@ import { TelephoneService } from '../telephone.service';
 @Component({
   selector: 'app-telephone-accessoire',
   templateUrl: '../../element-layout.html',
-  styleUrls: ['../../element-layout.css']
+  styleUrls: ['../../element-layout.css'],
+  providers: [TelephoneService]
 })
 export class TelephoneAccessoireComponent implements OnInit {
   articles: Array<Article> = []
@@ -13,6 +14,11 @@ export class TelephoneAccessoireComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getAccessories().subscribe(phones => this.articles = phones);
+  }
+
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
   }
 
 }

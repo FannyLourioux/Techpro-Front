@@ -5,7 +5,8 @@ import { StockageService } from '../stockage.service';
 @Component({
   selector: 'app-stockage-accessoire',
   templateUrl: '../../element-layout.html',
-  styleUrls: ['../../element-layout.css']
+  styleUrls: ['../../element-layout.css'],
+  providers: [StockageService]
 })
 export class StockageAccessoireComponent implements OnInit {
   articles: Array<Article> = [];
@@ -14,5 +15,10 @@ export class StockageAccessoireComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getAccessories().subscribe(items => this.articles = items);
+  }
+
+  delete(id: string): void {
+    this.service.delete(id);
+    location.reload();
   }
 }

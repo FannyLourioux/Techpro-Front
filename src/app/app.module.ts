@@ -30,6 +30,7 @@ import { AdminComponent } from './admin/admin.component';
     TelephoneModule,
     StockageModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

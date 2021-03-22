@@ -7,52 +7,17 @@ import { Article } from '../element';
   providedIn: 'root'
 })
 export class PcService {
-  private computers: Array<Article> = [{
-    id: 1344,
-    name: 'Macbook Pro',
-    brand: 'Apple',
-    category: 'portable',
-    photo: '/assets/img/x',
-    label: 'The fastest computer',
-    price: 1449
-  },
-  {
-    id: 3554,
-    name: 'X3464G',
-    brand: 'HP',
-    category: 'portable',
-    photo: '/assets/img/y',
-    label: 'An average computer',
-    price: 789
-  },
-  {
-    id: 1494,
-    name: 'Bingo ingo',
-    brand: 'Asus',
-    category: 'fixe',
-    photo: '/assets/img/x',
-    label: 'The funniest computer',
-    price: 1099
-  },
-  
-  {
-    id: 1494,
-    name: 'Tooooop',
-    brand: 'Acer',
-    category: 'fixe',
-    photo: '/assets/img/x',
-    label: 'The computer at the top of the market',
-    price: 2579
-  }]
-
   private url: string = 'http://localhost:8080/tech/items/pc'
   
   constructor(private client: HttpClient) {
     this.client = client
   }
 
-  getComputers() : Observable<Array<Article>> { return of(this.computers); }
+  getComputers() : Observable<Array<Article>> { return of([]); }
   getLaptops() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/portables`); }
   getDesktops() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/fixes`); }
   getAccessories() : Observable<Array<Article>> { return this.client.get<Array<Article>>(`${this.url}/accessoires`); }
+  delete(id: string): void { 
+    this.client.delete(`http://localhost:8080/tech/item/${id}`).subscribe(() => console.log('working')); 
+  }
 }
