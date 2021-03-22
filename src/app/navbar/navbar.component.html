@@ -6,38 +6,44 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="dropdown">
+          <button class="dropbtn" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ordinateurs
-          </a>
+          </button>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/pc">Tous les Ordinateurs</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" routerLink="/pc/portable">PC Portable</a></li>
             <li><a class="dropdown-item" routerLink="/pc/fixe">PC fixes</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" routerLink="/pc/accessoire">Accessoires</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="dropdown">
+          <button class="dropbtn" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Téléphones
-          </a>
+          </button>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/telephone">Tous les Téléphones</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" routerLink="/telephone/portable">Portable</a></li>
             <li><a class="dropdown-item" routerLink="/telephone/fixe">Fixes</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" routerLink="/telephone/accessoire">Accessoires</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Stockage
-          </a>
-          <ul class="dropdown-menu"  aria-labelledby="navbarDropdown">
+        <li class="dropdown">
+          <button class="dropbtn" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Stockages
+          </button>
+          <div class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/stockage">Tous les Accessoires de Stockages</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" routerLink="/stockage/cle-usb">Clefs USB</a></li>
             <li><a class="dropdown-item" routerLink="/stockage/disque-dur">Disques durs</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" routerLink="/stockage/accessoire">Accessoires</a></li>
-          </ul>
+          </div>
         </li>
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
