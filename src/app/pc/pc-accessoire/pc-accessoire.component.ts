@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 import { Article } from 'src/app/element';
 import { PcService } from '../pc.service';
 
@@ -11,15 +12,19 @@ import { PcService } from '../pc.service';
 export class PcAccessoireComponent implements OnInit {
   articles: Array<Article> = []
 
-  constructor(private service: PcService) { }
+  constructor(private service: PcService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.service.getAccessories().subscribe(items => this.articles = items);
   }
 
   delete(id: string): void {
-    this.service.delete(id);
-    location.reload();
+    const x = this.authService.estConnecte;
+    if (x()) {
+      this.service.delete(id);
+      location.reload();
+    }
+    
   }
 
 }
